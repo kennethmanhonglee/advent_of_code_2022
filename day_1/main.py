@@ -1,31 +1,36 @@
-def day_1_part_1():
-  total = 0
-  highest = 0
+from typing import List
 
-  with open('./input.txt') as file:
-    for line in file:
-      if line == "\n":
-        highest = max(highest, total)
-        total = 0
-      else:
-        total += int(line)
+class Day1Attempt():
+  def __init__(self) -> None:
+    print(self.part_1())
+    print(self.part_2())
 
-  return highest
+  def part_1(self) -> int:
+    total = 0
+    highest = 0
 
-print(day_1_part_1())
+    with open('./input.txt') as file:
+      for line in file:
+        if line == "\n":
+          highest = max(highest, total)
+          total = 0
+        else:
+          total += int(line)
 
-def day_2_attempt():
-  total = 0
-  sums = []
+    return highest
 
-  with open('./input.txt') as file:
-    for line in file:
-      if line == '\n':
-        sums.append(total)
-        total = 0
-      else:
-        total += int(line)
-  
-  return sum(sorted(sums, reverse=True)[:3])
+  def part_2(self) -> List[int]:
+    total = 0
+    sums = []
+
+    with open('./input.txt') as file:
+      for line in file:
+        if line == '\n':
+          sums.append(total)
+          total = 0
+        else:
+          total += int(line)
     
-print(day_2_attempt())
+    return sum(sorted(sums, reverse=True)[:3])
+
+Day1Attempt()

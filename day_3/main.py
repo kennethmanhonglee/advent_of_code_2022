@@ -57,7 +57,7 @@ class Day3Attempt():
   }
 
   def __init__(self) -> None:
-    # self.part_1()
+    self.part_1()
     self.part_2()
 
   def part_1(self) -> None:

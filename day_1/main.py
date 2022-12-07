@@ -33,4 +33,6 @@ class Day1Attempt():
     
     return sum(sorted(sums, reverse=True)[:3])
 
-Day1Attempt()
+
+if __name__ == "__main__":
+  Day1Attempt()

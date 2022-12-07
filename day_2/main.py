@@ -1,23 +1,3 @@
-"""
-opponent: 
-  A - rock - 1pt
-  B - paper - 2pt
-  C - scissor - 3pt
-me:
-  X - rock - 1pt
-  Y - paper - 2pt
-  Z - scissor - 3pt
-
-round outcome:
-  loss - 0
-  draw - 3
-  win - 6
-
-score for each round = your move + round outcome
-  ex: 
-    A X - draw (3) + rock (1) = 4
-"""
-
 class Day2Attempt():
   MOVES_SCORES_part_1 : dict[str, int] = {
     "X": 1,

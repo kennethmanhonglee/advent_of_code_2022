@@ -57,7 +57,8 @@ class Day3Attempt():
   }
 
   def __init__(self) -> None:
-    self.part_1()
+    # self.part_1()
+    self.part_2()
 
   def part_1(self) -> None:
     with open('./input.txt') as file:
@@ -76,6 +77,28 @@ class Day3Attempt():
         total_priority += self.PART_1_PRIORITIES[repeated_item]
     
     print(total_priority)
+
+  def part_2(self) -> None:
+    with open('./input.txt') as file:
+      group_member_count = 0
+      counters = []
+      total = 0
+
+      for line in file:
+        group_member_count += 1
+        stripped_line = line.splitlines()[0]
+        counters.append(Counter(stripped_line))
+
+        if group_member_count == 3:
+          for char in stripped_line:
+            # if char in all 3 counters
+            if all([char in ct for ct in counters]):
+              total += self.PART_1_PRIORITIES[char]  
+              break
+          group_member_count = 0
+          counters = []
+      print(total)
+
 
 if __name__ == "__main__":
   Day3Attempt()

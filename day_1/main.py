@@ -1,4 +1,3 @@
-
 def day_1_part_1():
   total = 0
   highest = 0
